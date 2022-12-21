@@ -1,5 +1,6 @@
 import { ErrorMessage } from "../Error/error";
 import { Input } from "./input.styled";
+import "./style/input.css";
 
 interface CommonInputProps {
   placeholder: string;
@@ -15,8 +16,8 @@ interface CommonInputProps {
 export const CommonInput = ({name, type, placeholder, styleInputProp, value, onChange, error, errorText}: CommonInputProps) => {
   return (
     <>
-      <label className="InputInfoWrapper">
-        <p className="NameInput">{name}</p>
+      <label className="form-label">
+        <p className="form-text">{name}</p>
         <Input
           type={type}
           placeholder={placeholder}

@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { Header, Home, LogIn } from './Components';
+import { Drinks, Header, Home, LogIn } from './Components';
 
 
 
@@ -10,6 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/catalog" element={<Drinks />} />
         <Route path="/login" element={<LogIn />} />
       </Routes>
     </>

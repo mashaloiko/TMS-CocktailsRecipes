@@ -1,0 +1,14 @@
+.form-label {
+  width: 100%;
+}
+
+.form-text {
+  color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 35px;
+  letter-spacing: 0.2px;
+}/*# sourceMappingURL=input.css.map */
