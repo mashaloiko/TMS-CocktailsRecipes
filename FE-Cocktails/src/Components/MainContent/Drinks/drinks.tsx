@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
 import { api } from "../../../Axios/instance";
+import { ErrorMessage } from "../../Common/Error/error";
 
 
 export interface DrinkType {
   strDrink: string;
   strInstructions: string;
 }
-const styles = {
-  display: "flex",
-  marginTop: 80,
-  flexDirection: "column",
-  justifyContent: "center",
-  alignItems: "center",
-} as const;
+
 
 export const Drinks = () => {
   const [drinks, setDrinks] = useState<Array<DrinkType>>([]);
@@ -24,8 +19,8 @@ export const Drinks = () => {
 
   const getDrinks = async () => {
     try {
-      const result = await api.get("/api/json/v1/1/search.php?f=a");
-      setDrinks(result.data);
+      const result = await api.get(`/api/json/v1/1/search.php?f=${key}`);
+      setDrinks(result.data.drinks);
       console.log(result);
     } catch (error: any) {
       setError(error.message);
@@ -33,9 +28,9 @@ export const Drinks = () => {
   };
 
   return (
-    <div style={styles}>
+    <div>
       <ul>
-        {error ? <p>text={error}</p> : null}
+        {error ? <ErrorMessage errorText={error} /> : null}
         {drinks.map((drink) => (
           <li>
             {drink.strDrink} {drink.strInstructions}
