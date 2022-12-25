@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { api } from "../../../Axios/instance";
 import { ErrorMessage } from "../../Common/Error/error";
 
-
 export interface DrinkType {
   strDrink: string;
-  strInstructions: string;
+  strDrinkThumb: string;
+  strInstructions?: string;
 }
 
 
@@ -19,7 +19,7 @@ export const Drinks = () => {
 
   const getDrinks = async () => {
     try {
-      const result = await api.get(`/api/json/v1/1/search.php?f=${key}`);
+      const result = await api.get(`/api/json/v1/1/search.php?f=a`);
       setDrinks(result.data.drinks);
       console.log(result);
     } catch (error: any) {
@@ -29,14 +29,14 @@ export const Drinks = () => {
 
   return (
     <div>
-      <ul>
+      <div>
         {error ? <ErrorMessage errorText={error} /> : null}
         {drinks.map((drink) => (
-          <li>
-            {drink.strDrink} {drink.strInstructions}
-          </li>
+          <div>
+            {drink.strDrinkThumb} {drink.strDrink}
+          </div>
           ))}
-      </ul>
+      </div>
     </div>
   )
 };

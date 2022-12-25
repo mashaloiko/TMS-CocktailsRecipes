@@ -15,9 +15,13 @@
     padding: 0 15px;
   }
   &__logo {
-    color: rgb(255, 255, 255);
-    padding: 20px 0;
+    display: inline-block;
     cursor: pointer;
+  }
+  &__img {
+    pointer-events: none;
+    width: 20%;
+    height: 20%;
   }
   &__navigation {
     max-width: 400px;

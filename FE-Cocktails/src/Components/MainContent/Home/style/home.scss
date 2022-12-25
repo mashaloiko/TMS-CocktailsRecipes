@@ -6,7 +6,7 @@
 .home {
   background-color: rgba(153, 107, 96, 1);
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   margin: 0 auto;
   &__wrap-img{
@@ -33,6 +33,25 @@
   }
   &__wrap-text {
     width: 55%;
-    padding: 277px 60px 100px 60px;
+    padding: 200px 200px 100px 60px;
+  }
+  &__title {
+    font-family: 'Liberation Serif';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 73px;
+    line-height: 96px;
+    color: rgb(255, 255, 255);
+    margin-bottom: 35px;
+  }
+  &__text {
+    max-width: 570px;
+    width: 100%;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    color: rgb(255, 255, 255);
   }
 }
