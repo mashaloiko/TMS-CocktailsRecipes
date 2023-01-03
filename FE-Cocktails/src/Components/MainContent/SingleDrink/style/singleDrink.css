@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.drink {
+  min-height: 100vh;
+}
+.drink__container {
+  max-width: 1170px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.drink__wrap {
+  margin-bottom: 30px;
+  position: relative;
+}
+.drink__wrap::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.drink__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=singleDrink.css.map */

@@ -37,7 +37,7 @@ export const Drinks = () => {
         {error ? <ErrorMessage errorText={error} /> : null}
         {drinks.map((drink) => (
           <>
-            <Link className="drinks__wrap" to={`/catalog/${params.letter}/${params.strDrink}`}>
+            <Link className="drinks__wrap" to={`/catalog/${params.letter}/${drink.strDrink}`}>
               <div className="drinks__hover">
                 <h2 className="drinks__title">{drink.strDrink}</h2>
               </div>

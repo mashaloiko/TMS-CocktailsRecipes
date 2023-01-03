@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { api } from "../../../Axios/instance";
 import { ErrorMessage } from "../../Common/Error/error";
+import "./style/singleDrink.css";
 
 interface SingleDrinkType {
-  strDrink?: string;
-  strInstructions?: string;
-  strDrinkThumb?: string;
+  strDrink: string;
+  strInstructions: string;
+  strDrinkThumb: string;
   strIngredient1?: string;
   strIngredient2?: string;
   strIngredient3?: string;
@@ -15,7 +16,7 @@ interface SingleDrinkType {
 
 export const SingleDrink = () => {
   const params = useParams<any>();
-  const [drink, setDrink] = useState<Array<SingleDrinkType>>([]);
+  const [drink, setDrink] = useState<SingleDrinkType>();
   const [error, setError] = useState<any>("");
 
   useEffect(() => {
@@ -34,9 +35,9 @@ export const SingleDrink = () => {
     <div className="drink">
       <div className="drink__container">
         {error ? <ErrorMessage errorText={error} /> : null}
-            <h2 className="drink__title">{params.strDrink}</h2>
-            <div className="drinks__hover">
-              <img className="drinks__img" src={params.strDrinkThumb} alt="drink" />
+            <h2 className="drink__title">{drink?.strDrink}</h2>
+            <div className="drink__wrap">
+              <img className="drink__img" src={drink?.strDrinkThumb} alt="drink" />
             </div>
       </div>
     </div>
