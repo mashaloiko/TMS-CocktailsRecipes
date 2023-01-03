@@ -2,60 +2,61 @@ import { NavLink } from "react-router-dom";
 import "./style/catalog.scss"
 
 export const Catalog = () => {
+
   return (
     <div className="catalog">
       <div className="catalog__container">
         <NavLink key="a" to={`/catalog/a`} className="catalog__link">A </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">B </NavLink>
+        <NavLink key="b" to={`/catalog/b`} className="catalog__link">B </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">C </NavLink>
+        <NavLink key="c" to={`/catalog/c`} className="catalog__link">C </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">D </NavLink>
+        <NavLink key="d" to={`/catalog/d`} className="catalog__link">D </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">E </NavLink>
+        <NavLink key="e" to={`/catalog/e`} className="catalog__link">E </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">F </NavLink>
+        <NavLink key="f" to={`/catalog/f`} className="catalog__link">F </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">G </NavLink>
+        <NavLink key="g" to={`/catalog/g`} className="catalog__link">G </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">H </NavLink>
+        <NavLink key="h" to={`/catalog/h`} className="catalog__link">H </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">I </NavLink>
+        <NavLink key="i" to={`/catalog/i`} className="catalog__link">I </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">J </NavLink>
+        <NavLink key="j" to={`/catalog/j`} className="catalog__link">J </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">K </NavLink>
+        <NavLink key="k" to={`/catalog/k`} className="catalog__link">K </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">L </NavLink>
+        <NavLink key="l" to={`/catalog/l`} className="catalog__link">L </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">M </NavLink>
+        <NavLink key="m" to={`/catalog/m`} className="catalog__link">M </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">N </NavLink>
+        <NavLink key="n" to={`/catalog/n`} className="catalog__link">N </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">O </NavLink>
+        <NavLink key="o" to={`/catalog/o`} className="catalog__link">O </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">P </NavLink>
+        <NavLink key="p" to={`/catalog/p`} className="catalog__link">P </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">q </NavLink>
+        <NavLink key="q" to={`/catalog/q`} className="catalog__link">q </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">r </NavLink>
+        <NavLink key="r" to={`/catalog/r`} className="catalog__link">r </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">s </NavLink>
+        <NavLink key="s" to={`/catalog/s`} className="catalog__link">s </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">t </NavLink>
+        <NavLink key="t" to={`/catalog/t`} className="catalog__link">t </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">u </NavLink>
+        <NavLink key="u" to={`/catalog/u`} className="catalog__link">u </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">v </NavLink>
+        <NavLink key="v" to={`/catalog/v`} className="catalog__link">v </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">w </NavLink>
+        <NavLink key="w" to={`/catalog/w`} className="catalog__link">w </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">x </NavLink>
+        <NavLink key="x" to={`/catalog/x`} className="catalog__link">x </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">y </NavLink>
+        <NavLink key="y" to={`/catalog/y`} className="catalog__link">y </NavLink>
         <span>/ </span>
-        <NavLink key="a" to={`/catalog/a`} className="catalog__link">z </NavLink>
+        <NavLink key="z" to={`/catalog/z`} className="catalog__link">z </NavLink>
       </div>
     </div>
   )
