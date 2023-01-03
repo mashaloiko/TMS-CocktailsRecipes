@@ -5,6 +5,7 @@ import { ErrorMessage } from "../../Common/Error/error";
 import "./style/drinks.css";
 
 export interface DrinkType {
+  idDrink: number;
   strDrink?: string;
   strDrinkThumb: string;
   strInstructions?: string;
@@ -37,7 +38,7 @@ export const Drinks = () => {
         {error ? <ErrorMessage errorText={error} /> : null}
         {drinks.map((drink) => (
           <>
-            <Link className="drinks__wrap" to={`/catalog/${params.letter}/${drink.strDrink}`}>
+            <Link className="drinks__wrap" to={`/catalog/${params.letter}/${drink.idDrink}`}>
               <div className="drinks__hover">
                 <h2 className="drinks__title">{drink.strDrink}</h2>
               </div>

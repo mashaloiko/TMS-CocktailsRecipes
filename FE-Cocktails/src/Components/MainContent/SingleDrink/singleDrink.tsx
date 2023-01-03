@@ -25,7 +25,7 @@ export const SingleDrink = () => {
 
   const getSingleDrink = async () => {
     try {
-      const res = await api.get(`/api/json/v1/1/search.php?s=${params.drink}`);
+      const res = await api.get(`/api/json/v1/1/lookup.php?i=${params.drink}`);
       setDrink(res.data.drinks);
     } catch (err: any) {
       setError(err.message);
@@ -39,6 +39,7 @@ export const SingleDrink = () => {
             <div className="drink__wrap">
               <img className="drink__img" src={drink?.strDrinkThumb} alt="drink" />
             </div>
+            <p>{drink?.strInstructions}</p>
       </div>
     </div>
   )

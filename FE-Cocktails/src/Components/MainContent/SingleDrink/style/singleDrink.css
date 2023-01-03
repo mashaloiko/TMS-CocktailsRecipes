@@ -13,6 +13,9 @@
   padding: 0 15px;
   margin: 0 auto;
 }
+.drink__title {
+  color: red;
+}
 .drink__wrap {
   margin-bottom: 30px;
   position: relative;
