@@ -5,7 +5,7 @@
 }
 
 .drink {
-  min-height: 100vh;
+  padding: 40px 0;
 }
 .drink__container {
   max-width: 1170px;
@@ -14,11 +14,21 @@
   margin: 0 auto;
 }
 .drink__title {
-  color: red;
+  color: rgb(0, 0, 0);
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Roboto";
+}
+.drink__block {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 40px;
 }
 .drink__wrap {
-  margin-bottom: 30px;
   position: relative;
+  width: 45%;
 }
 .drink__wrap::before {
   content: "";
@@ -29,6 +39,44 @@
   position: absolute;
   left: 0;
   top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.drink__ingredients {
+  width: 50%;
+}
+.drink__ingredient {
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Roboto";
+}
+.drink__measure {
+  margin-right: 20px;
+}
+.drink__text {
+  margin: 0 auto 50px;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 20px;
+  font-weight: 500;
+  max-width: 500px;
+}
+.drink__arrows {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.drink__button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  width: 70px;
+  height: 70px;
+}
+.drink__arrow {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
