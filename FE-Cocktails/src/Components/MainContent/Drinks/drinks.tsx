@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../../../Axios/instance";
+import { addDrinks } from "../../../Redux/reducer/drinkSlice";
 import { ErrorMessage } from "../../Common/Error/error";
 import "./style/drinks.css";
 
@@ -14,28 +15,32 @@ export interface DrinkType {
   letter: string;
 }
 
-
 export const Drinks = () => {
   const params = useParams<any>();
-  const [drinks, setDrinks] = useState<Array<DrinkType>>([]);
   const [error, setError] = useState<any>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  
+  
 
-  useEffect(() => {
-    getDrinks();
-  }, []);
+  const drinks = useSelector((state: any) => state.drinks.drinksArr);
+
+  const dispatch = useDispatch();
 
   const getDrinks = async () => {
     try {
       setIsLoading(true);
       const result = await api.get(`/api/json/v1/1/search.php?f=${params.letter}`);
-      setDrinks(result.data.drinks);
+      dispatch(addDrinks({ data: result.data.drinks}));
       setIsLoading(false);
     } catch (error: any) {
       setError(error.message);
       setIsLoading(false);
     }
   };
+  
+  useEffect(() => {
+    getDrinks();
+  }, []);
 
   return (
     <div className="drinks">
@@ -49,7 +54,7 @@ export const Drinks = () => {
         visible={isLoading}
       />
         {error ? <ErrorMessage errorText={error} /> : null}
-        {drinks.map((drink) => (
+        {drinks.map((drink: DrinkType) => (
           <>
             <Link className="drinks__wrap" to={`/catalog/${params.letter}/${drink.idDrink}`}>
               <div className="drinks__hover">
