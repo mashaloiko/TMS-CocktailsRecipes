@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.title {
+  margin-top: 200px;
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  font-family: "Roboto";
+  color: rgb(0, 0, 0);
+}
+@media (max-width: 1024px) {
+  .title {
+    font-size: 25px;
+  }
+}/*# sourceMappingURL=noData.css.map */

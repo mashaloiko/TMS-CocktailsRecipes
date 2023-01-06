@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import { api } from "../../../Axios/instance";
 import { addDrinks } from "../../../Redux/reducer/drinkSlice";
 import { ErrorMessage } from "../../Common/Error/error";
+import { NoData } from "../../Common/noData/noData";
 import "./style/drinks.css";
 
 export interface DrinkType {
@@ -18,7 +19,7 @@ export interface DrinkType {
 export const Drinks = () => {
   const params = useParams<any>();
   const [error, setError] = useState<any>("");
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   
   
 
@@ -44,26 +45,33 @@ export const Drinks = () => {
 
   return (
     <div className="drinks">
-      <div className="drinks__container">
+      <div className="drinks__loader">
       <ThreeDots 
-        height="80" 
-        width="80" 
-        radius="9"
-        color="black" 
-        ariaLabel="three-dots-loading"
-        visible={isLoading}
-      />
+          height="80" 
+          width="80" 
+          radius="9"
+          color="black" 
+          ariaLabel="three-dots-loading"
+          visible={isLoading}
+        />
+      </div>
+      <div className="drinks__container">
+        {drinks === null ? <NoData /> : null}
+        <div className="drinks__block">
         {error ? <ErrorMessage errorText={error} /> : null}
-        {drinks.map((drink: DrinkType) => (
-          <>
-            <Link className="drinks__wrap" to={`/catalog/${params.letter}/${drink.idDrink}`}>
-              <div className="drinks__hover">
-                <h2 className="drinks__title">{drink.strDrink}</h2>
-              </div>
-              <img className="drinks__img" src={drink.strDrinkThumb} alt="drink" />
-            </Link>
-          </>
-          ))}
+        {!isLoading &&
+          drinks?.map((drink: DrinkType) => (
+            <>
+              <Link className="drinks__wrap" to={`/catalog/${params.letter}/${drink.idDrink}`}>
+                <div className="drinks__hover">
+                  <h2 className="drinks__title">{drink.strDrink}</h2>
+                </div>
+                <img className="drinks__img" src={drink.strDrinkThumb} alt="drink" />
+              </Link>
+            </>
+            ))
+          }
+          </div>
       </div>
     </div>
   )

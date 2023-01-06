@@ -7,6 +7,9 @@ export const Input = styled.input<{styleInputProp: string}>`
   padding: 10px 0 10px 10px;
   border: none;
   border-radius: 5px;
-  font-family: 'Popins', sans-serif;
+  font-family: 'Roboto';
   font-size: 15px;
+  @media (max-width: 1024px) {
+    margin-bottom: 17px;
+  }
 `;

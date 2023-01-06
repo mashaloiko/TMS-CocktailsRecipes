@@ -5,15 +5,27 @@
 }
 
 .drinks {
-  min-height: 100vh;
+  min-height: 90vh;
+}
+.drinks__loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .drinks__container {
   max-width: 1170px;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
+}
+.drinks__block {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+@media (max-width: 767px) {
+  .drinks__block {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .drinks__wrap {
   cursor: pointer;

@@ -46,27 +46,29 @@ export const LogIn = () => {
   
   return (
     <div className="login-wrap">
-      <form className="form">
-        <div className="form__wrap">
-          <CommonInput 
-          placeholder="Enter your login" 
-          type="text" 
-          name="Login" 
-          styleInputProp="login"
-          value={login}
-          onChange={handleChangeLogin}
-          />
-          <CommonInput 
-          placeholder="Enter you password" 
-          type="password" 
-          name="Password" 
-          styleInputProp="login"
-          value={password}
-          onChange={handleChangePassword}
-          />
-        </div>
-        <CommonButton name="LOGIN" styleBtnProp="login"/>
-      </form>
+      <div className="container">
+        <form className="form">
+          <div className="form__wrap">
+            <CommonInput 
+            placeholder="Enter your login" 
+            type="text" 
+            name="Login" 
+            styleInputProp="login"
+            value={login}
+            onChange={handleChangeLogin}
+            />
+            <CommonInput 
+            placeholder="Enter you password" 
+            type="password" 
+            name="Password" 
+            styleInputProp="login"
+            value={password}
+            onChange={handleChangePassword}
+            />
+          </div>
+          <CommonButton name="LOGIN" styleBtnProp="login"/>
+        </form>
+      </div>
     </div>
   )
 }

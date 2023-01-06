@@ -59,15 +59,17 @@ export const SingleDrink = () => {
 
   return (
     <div className="drink">
-      <div className="drink__container">
+      <div className="drink__loader">
         <ThreeDots 
-          height="100" 
-          width="100" 
-          radius="9"
-          color="black" 
-          ariaLabel="three-dots-loading"
-          visible={isLoading}
-        />
+            height="80" 
+            width="80" 
+            radius="9"
+            color="black" 
+            ariaLabel="three-dots-loading"
+            visible={isLoading}
+          />
+      </div>
+      <div className="drink__container">
         {error && <ErrorMessage errorText={error} />}
         {drinks.map((drink:SingleDrinkType) => (
           <>

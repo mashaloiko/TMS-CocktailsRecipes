@@ -6,6 +6,7 @@ export const Catalog = () => {
   return (
     <div className="catalog">
       <div className="catalog__container">
+        <div className="catalog__wrap">
         <NavLink key="a" to={`/catalog/a`} className="catalog__link">A </NavLink>
         <span>/ </span>
         <NavLink key="b" to={`/catalog/b`} className="catalog__link">B </NavLink>
@@ -57,6 +58,7 @@ export const Catalog = () => {
         <NavLink key="y" to={`/catalog/y`} className="catalog__link">y </NavLink>
         <span>/ </span>
         <NavLink key="z" to={`/catalog/z`} className="catalog__link">z </NavLink>
+        </div>
       </div>
     </div>
   )

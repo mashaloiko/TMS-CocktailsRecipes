@@ -4,14 +4,24 @@
   box-sizing: border-box;
 }
 .drinks {
-  min-height: 100vh;
+  min-height: 90vh;
+  &__loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__container {
     max-width: 1170px;
     width: 100%;
     padding: 0 15px;
     margin: 0 auto;
+  }
+  &__block {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
   &__wrap {
     cursor: pointer;

@@ -7,9 +7,15 @@
 .home {
   background-color: rgb(153, 107, 96);
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .home {
+    flex-direction: column;
+    height: none;
+  }
 }
 .home__wrap-img {
   width: 45%;
@@ -19,6 +25,11 @@
   content: "";
   display: block;
   padding-top: 100%;
+}
+@media (max-width: 767px) {
+  .home__wrap-img {
+    width: 100%;
+  }
 }
 .home__img {
   position: absolute;
@@ -34,16 +45,35 @@
 }
 .home__wrap-text {
   width: 55%;
-  padding: 200px 200px 100px 60px;
+  padding: 200px 20px 100px 60px;
+}
+@media (max-width: 767px) {
+  .home__wrap-text {
+    padding: 96px 35px 100px 60px;
+    width: 100%;
+  }
 }
 .home__title {
   font-family: "Liberation Serif";
   font-style: normal;
   font-weight: 400;
-  font-size: 73px;
-  line-height: 96px;
+  font-size: 63px;
+  line-height: 86px;
   color: rgb(255, 255, 255);
   margin-bottom: 35px;
+}
+@media (max-width: 1024px) {
+  .home__title {
+    font-weight: 300;
+    font-size: 53px;
+    line-height: 76px;
+  }
+}
+@media (max-width: 767px) {
+  .home__title {
+    font-size: 49px;
+    line-height: 70px;
+  }
 }
 .home__text {
   max-width: 570px;
@@ -51,7 +81,12 @@
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 18px;
+  font-size: 23px;
   line-height: 32px;
   color: rgb(255, 255, 255);
+}
+@media (max-width: 767px) {
+  .home__text {
+    font-size: 20px;
+  }
 }/*# sourceMappingURL=home.css.map */
