@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { api } from "../../../Axios/instance";
 import { addDrinks } from "../../../Redux/reducer/drinkSlice";
+import { DrinksDispatch, RootState } from "../../../Redux/store";
 import { ErrorMessage } from "../../Common/Error/error";
 import { NoData } from "../../Common/noData/noData";
 import "./style/drinks.css";
@@ -13,7 +14,7 @@ export interface DrinkType {
   strDrink?: string;
   strDrinkThumb: string;
   strInstructions?: string;
-  letter: string;
+  letter?: string;
 }
 
 export const Drinks = () => {
@@ -23,15 +24,15 @@ export const Drinks = () => {
   
   
 
-  const drinks = useSelector((state: any) => state.drinks.drinksArr);
+  const drinks = useSelector((state: RootState) => state.drinks.drinksArr);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<DrinksDispatch>();
 
   const getDrinks = async () => {
     try {
       setIsLoading(true);
       const result = await api.get(`/api/json/v1/1/search.php?f=${params.letter}`);
-      dispatch(addDrinks({ data: result.data.drinks}));
+      dispatch(addDrinks({ responce: result.data.drinks}));
       setIsLoading(false);
     } catch (error: any) {
       setError(error.message);

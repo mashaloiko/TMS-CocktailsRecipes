@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { api } from "../../../Axios/instance";
 import { ErrorMessage } from "../../Common/Error/error";
 import "./style/singleDrink.css";
@@ -8,16 +8,17 @@ import left from '../../../Assets/left.svg';
 import right from '../../../Assets/right.svg';
 
 interface SingleDrinkType {
+  idDrink: number;
   strDrink: string;
   strInstructions: string;
   strDrinkThumb: string;
-  strIngredient1?: string;
-  strIngredient2?: string;
-  strIngredient3?: string;
-  strIngredient4?: string;
-  strIngredient5?: string;
-  strIngredient6?: string;
-  strIngredient7?: string;
+  strIngredient1: string;
+  strIngredient2: string;
+  strIngredient3: string;
+  strIngredient4: string;
+  strIngredient5: string;
+  strIngredient6: string;
+  strIngredient7: string;
   strMeasure1: string;
   strMeasure2: string;
   strMeasure3: string;

@@ -1,0 +1,12 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.error {
+  color: rgb(247, 255, 7);
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 400;
+}/*# sourceMappingURL=error.css.map */

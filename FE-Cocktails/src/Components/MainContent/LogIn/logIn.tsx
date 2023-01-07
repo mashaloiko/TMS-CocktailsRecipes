@@ -5,36 +5,41 @@ import "./style/login.css";
 
 export const LogIn = () => {
   const [login, setLogin] = useState<string>("");
-  // const [loginError, setLoginError] = useState<boolean>(false);
+  const [loginError, setLoginError] = useState<boolean>(false);
 
   const [password, setPassword] = useState<string>("");
-  // const [passwordError, setPasswordError] = useState<boolean>(false);
+  const [passwordError, setPasswordError] = useState<boolean>(false);
 
+  const [formValid, setFormValid] = useState<boolean>(false);
 
+  const hasCapitalFirst = (str: string) => /[A-Z]/.test(str.charAt(0));
+
+  const regularExpression = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/;
+  const isPassword = (str: string) => regularExpression.test(str);
   
-  // useEffect(() => {
-  //   if (!isCorrectPassword(login) && login.length > 0) {
-  //     setLoginError(true);
-  //   } else {
-  //     setLoginError(false);
-  //   }
-  // }, [login]);
+  useEffect(() => {
+    if (!hasCapitalFirst(login) && login.length > 0) {
+      setLoginError(true);
+    } else {
+      setLoginError(false);
+    }
+  }, [login]);
   
-  // useEffect(() => {
-  //   if (!isPassword(password) && password.length > 0) {
-  //     setPasswordError(true);
-  //   } else {
-  //     setPasswordError(false);
-  //   }
-  // }, [password]);
+  useEffect(() => {
+    if (!isPassword(password) && password.length > 0) {
+      setPasswordError(true);
+    } else {
+      setPasswordError(false);
+    }
+  }, [password]);
 
-  // useEffect(() => {
-  //   if (loginError || passwordError) {
-  //     setFormValid(false);
-  //   } else {
-  //     setFormValid(true);
-  //   }
-  // }, [loginError, passwordError]);
+  useEffect(() => {
+    if (loginError || passwordError) {
+      setFormValid(false);
+    } else {
+      setFormValid(true);
+    }
+  }, [loginError, passwordError]);
   
   const handleChangeLogin = (event: React.ChangeEvent<HTMLInputElement>) => {
     setLogin(() => event.target.value);
@@ -56,6 +61,8 @@ export const LogIn = () => {
             styleInputProp="login"
             value={login}
             onChange={handleChangeLogin}
+            error={loginError}
+            errorText="Enter your Login in capital letter."
             />
             <CommonInput 
             placeholder="Enter you password" 
@@ -64,9 +71,11 @@ export const LogIn = () => {
             styleInputProp="login"
             value={password}
             onChange={handleChangePassword}
+            error={passwordError}
+            errorText="Minimum 8 characters, at least one uppercase letter, one lowercase letter and one number."
             />
           </div>
-          <CommonButton name="LOGIN" styleBtnProp="login"/>
+          <CommonButton disabled={!formValid} type="submit" name="LOGIN" styleBtnProp="login"/>
         </form>
       </div>
     </div>
