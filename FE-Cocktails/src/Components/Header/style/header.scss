@@ -8,11 +8,13 @@
   &__container{
     width: 100%;
     max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  &__wrap {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
-    padding: 0 15px;
   }
   &__logo {
     display: inline-block;
@@ -24,14 +26,33 @@
     height: 20%;
   }
   &__navigation {
-    max-width: 400px;
+    max-width: 450px;
     width: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    position: relative;
     color: rgb(255, 255, 255);
+    z-index: 10;
+  }
+  &__block {
+    display: flex;
+    @media (max-width: 767px) {
+      display: none;
+      position: absolute;
+      top: 17px;
+      left: 0;
+      width: 100%;
+      flex-direction: column;
+      background-color: black;
+    }
+  }
+  &__block.expanded {
+    @media (max-width: 767px) {
+    display: flex;
+    }
   }
   &__link {
+    width: 100%;
     text-decoration: none;
     color: rgb(255, 255, 255);
     cursor: pointer;
@@ -42,15 +63,30 @@
     line-height: 15px;
     text-transform: uppercase;
     display: block;
-    padding: 30px 0;
+    padding: 30px;
     border-bottom: 3px solid transparent;
     transition: all 0.3s linear;
+    text-align: center;
     &:hover {
       border-bottom: 3px solid rgb(255, 255, 255);
     } 
     &:active {
       color: rgba(153, 107, 96, 1);
       border-bottom: 3px solid rgba(153, 107, 96, 1);
+    }
+  }
+  &__nav-mobile {
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    @media (max-width: 767px) {
+      display: block;
     }
   }
 }

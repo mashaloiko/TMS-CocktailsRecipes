@@ -20,6 +20,7 @@ export const Catalog = () => {
   return (
     <div className="catalog">
       <div className="catalog__container">
+        <h2 className="catalog__title">Catalog</h2>
         <div className="catalog__wrap">
           <NavLink key="a" to={`/catalog/a`} className="catalog__link">A </NavLink>
           <span>/ </span>

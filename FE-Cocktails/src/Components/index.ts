@@ -1,3 +1,4 @@
+import { Favourite } from './MainContent/Favourite/favourite';
 import { NotFound } from './Common/NotFound/notFound';
 import { Footer } from './Footer/footer';
 import { Catalog } from './MainContent/Catalog/catalog';
@@ -7,4 +8,4 @@ import { Home } from './MainContent/Home/home';
 import { LogIn } from './MainContent/LogIn/logIn';
 import { SingleDrink } from './MainContent/SingleDrink/singleDrink';
 
-export { Header, Home, LogIn, Drinks, Catalog, Footer, SingleDrink, NotFound };
+export { Header, Home, LogIn, Drinks, Catalog, Footer, SingleDrink, NotFound, Favourite };
