@@ -25,10 +25,10 @@ const drinkSlice = createSlice({
       state.drinksArr = action.payload.responce;
     },
     addDrinkToFavourite(state:any, action:PayloadAction<DrinksArray>) {
-      state.favourite.push(action.payload)
+      state.favourite.push(action.payload);
     },
     removeDrinkFromFavourite(state:any, action:PayloadAction<DrinksArray>) {
-      state.favourite = state.favourite.filter((drink:any) => drink.idDrink !== action.payload)
+      state.favourite = state.favourite.filter((drink:any) => drink.idDrink !== action.payload);
     },
   },
 });

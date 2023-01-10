@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { ThreeDots } from "react-loader-spinner";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { api } from "../../../Axios/instance";
 import { addDrinks } from "../../../Redux/reducer/drinkSlice";
 import { DrinksDispatch, RootState } from "../../../Redux/store";
 import { DrinkType } from "../../../types/types";
 import { ErrorMessage } from "../../Common/Error/error";
 import { NoData } from "../../Common/noData/noData";
+import { DrinkCard } from "../DrinkCard/drinkCard";
 import "./style/drinks.css";
 
 
@@ -54,17 +55,16 @@ export const Drinks = () => {
         {error ? <ErrorMessage errorText={error} /> : null}
         {!isLoading &&
           drinks?.map((drink: DrinkType) => (
-            <>
-              <Link className="drinks__wrap" key={drink.idDrink} to={`/catalog/${params.letter}/${drink.idDrink}`}>
-                <div className="drinks__hover">
-                  <h2 className="drinks__title">{drink.strDrink}</h2>
-                </div>
-                <img className="drinks__img" src={drink.strDrinkThumb} alt="drink" />
-              </Link>
-            </>
-            ))
-          }
-          </div>
+            <DrinkCard 
+              key={drink.idDrink}
+              id={drink.idDrink}
+              title={drink.strDrink}
+              img={drink.strDrinkThumb}
+              letter={params.letter}
+            />
+          ))
+        }
+        </div>
       </div>
     </div>
   )

@@ -1,0 +1,62 @@
+.drinks__wrap {
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  border: 1px solid rgb(255, 255, 255);
+}
+.drinks__wrap::before {
+  content: "";
+  display: block;
+  padding-top: 100%;
+}
+.drinks__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  pointer-events: none;
+}
+.drinks__hover {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: transparent;
+  z-index: 3;
+  transition: all 0.3s linear;
+}
+.drinks__hover:hover {
+  background-color: rgba(153, 107, 96, 0.8);
+  color: black;
+}
+.drinks__hover:active {
+  background-color: rgba(112, 78, 69, 0.8);
+}
+.drinks__title {
+  font-family: "Bell MT";
+  font-size: 24px;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin-bottom: 37px;
+}
+@media (max-width: 1024px) {
+  .drinks__title {
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 23px;
+  }
+}
+@media (max-width: 767px) {
+  .drinks__title {
+    margin-bottom: 7px;
+  }
+}/*# sourceMappingURL=drinkCard.css.map */

@@ -32,46 +32,22 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.favourite__wrap {
+.favourite__button {
   cursor: pointer;
-  text-align: center;
-  position: relative;
-  border: 1px solid rgb(255, 255, 255);
+  border: none;
+  background-color: transparent;
+  width: 30px;
+  height: 30px;
 }
-.favourite__wrap::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
+@media (max-width: 767px) {
+  .favourite__button {
+    width: 50px;
+    height: 50px;
+  }
 }
 .favourite__img {
-  position: absolute;
-  left: 0;
-  top: 0;
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  pointer-events: none;
-}
-.favourite__hover {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  color: transparent;
-  z-index: 3;
-  transition: all 0.3s linear;
-}
-.favourite__hover:hover {
-  background-color: rgba(153, 107, 96, 0.8);
-  color: black;
-}
-.favourite__hover:active {
-  background-color: rgba(112, 78, 69, 0.8);
 }/*# sourceMappingURL=favourite.css.map */
