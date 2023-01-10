@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import { ThreeDots } from "react-loader-spinner";
 import { useNavigate, useParams } from "react-router-dom";
+import { ThreeDots } from "react-loader-spinner";
 import { api } from "../../../Axios/instance";
 import { ErrorMessage } from "../../Common/Error/error";
-import "./style/singleDrink.css";
-import left from '../../../Assets/left.svg';
 import { DrinkType } from "../../../types/types";
 import { DrinkInfo } from "../DrinkInfo/drinkInfo";
+import left from '../../../Assets/left.svg';
+import "./style/singleDrink.css";
 
 
 

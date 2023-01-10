@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { DrinksDispatch, RootState } from "../../../Redux/store";
+import { addDrinkToFavourite, removeDrinkFromFavourite } from "../../../Redux/reducer/drinkSlice";
 import { DrinkInfoProps } from "../../../types/types";
 import addHeart from '../../../Assets/addHeart.svg';
 import checkHeart from '../../../Assets/checkHeart.svg';
-
 import "./style/drinkInfo.css";
-import { addDrinkToFavourite, removeDrinkFromFavourite } from "../../../Redux/reducer/drinkSlice";
+
 
 export const DrinkInfo = ({
   title, 

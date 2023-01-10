@@ -1,5 +1,5 @@
-import "./style/home.css";
 import home from '../../../Assets/home-page.png';
+import "./style/home.css";
 
 export const Home = () => {
   return (

@@ -1,17 +1,10 @@
-import { ErrorMessage } from "../Error/error";
 import { Input } from "./input.styled";
+import { ErrorMessage } from "../Error/error";
+import { CommonInputProps } from "../../../types/types";
 import "./style/input.css";
 
-interface CommonInputProps {
-  placeholder: string;
-  type: string;
-  name: string;
-  styleInputProp: string;
-  value?: string;
-  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  error?: boolean;
-  errorText?: string | undefined;
-}
+
+
 
 export const CommonInput = ({name, type, placeholder, styleInputProp, value, onChange, error, errorText}: CommonInputProps) => {
   return (

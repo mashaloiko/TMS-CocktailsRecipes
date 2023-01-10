@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { ThreeDots } from "react-loader-spinner";
-import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { ThreeDots } from "react-loader-spinner";
 import { api } from "../../../Axios/instance";
 import { addDrinks } from "../../../Redux/reducer/drinkSlice";
 import { DrinksDispatch, RootState } from "../../../Redux/store";

@@ -26,7 +26,22 @@ export const Catalog = () => {
   "s", "t", "u", 
   "v", "w", "x", 
   "y", "z" 
-];
+  ];
+  const breakpoints = {
+    0: {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+    },
+    500: {
+      slidesPerView: 2,
+      slidesPerGroup: 2,
+    },
+    768: {
+      slidesPerView: 3,
+      slidesPerGroup: 3,
+    },
+  };
+
 
   return (
     <div className="catalog">
@@ -52,20 +67,7 @@ export const Catalog = () => {
             navigation={true}
             modules={[Pagination, Navigation]}
             className="mySwiper"
-            breakpoints={{
-              0: {
-                slidesPerView: 1,
-                slidesPerGroup: 1,
-              },
-              500: {
-                slidesPerView: 2,
-                slidesPerGroup: 2,
-              },
-              768: {
-                slidesPerView: 3,
-                slidesPerGroup: 3,
-              },
-            }}
+            breakpoints={breakpoints}
           >
             <SwiperSlide>
               <Link className="swiper__wrap" to={"/catalog/n/11003"}>

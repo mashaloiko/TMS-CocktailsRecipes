@@ -1,8 +1,8 @@
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import "./style/header.css"
-import logo from '../../Assets/logo.svg';
 import { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import logo from '../../Assets/logo.svg';
+import "./style/header.css";
+
 
 export const Header = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);

@@ -1,3 +1,14 @@
+export interface CommonInputProps {
+  placeholder: string;
+  type: string;
+  name: string;
+  styleInputProp: string;
+  value?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  error?: boolean;
+  errorText?: string | undefined;
+};
+
 export interface DrinkType {
   idDrink: string | number;
   strDrink: string;
