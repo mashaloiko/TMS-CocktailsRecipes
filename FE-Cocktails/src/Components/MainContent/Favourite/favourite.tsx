@@ -25,7 +25,7 @@ export const Favourite = () => {
               id={drink.idDrink}
               title={drink.strDrink}
               img={drink.strDrinkThumb}
-              letter={params.letter}
+              letter={drink.strDrink[0]}
             />
             <button className="button" onClick={() => removeDrink(drink.idDrink)}>
               <img className="button__img" src={remove} alt="remove" />

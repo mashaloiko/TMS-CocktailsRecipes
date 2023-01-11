@@ -5,7 +5,7 @@ interface DrinkCard {
   id: string | number;
   title: string;
   img:string;
-  letter: string | undefined;
+  letter?: string | undefined;
 };
 
 export const DrinkCard = ({id, title, img, letter} : DrinkCard) => {

@@ -25,12 +25,22 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 20px;
+    @media (max-width: 905px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 628px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
   &__block {
     display: grid;
     grid-template-columns: 300px 50px;
-    @media (max-width: 767px) {
-      grid-template-columns: repeat(2, 1fr);
+    @media (max-width: 1024px) {
+      grid-template-columns: 250px 30px;
+    }
+    @media (max-width: 628px) {
+      grid-template-columns: 300px 30px;
+      margin: 0 auto;
     }
   }
 }
