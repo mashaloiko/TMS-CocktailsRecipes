@@ -23,29 +23,29 @@
   font-weight: 600;
   line-height: 25px;
 }
+.favourite__wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
 .favourite__block {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 300px 50px;
 }
 @media (max-width: 767px) {
   .favourite__block {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.favourite__button {
+
+.button {
   cursor: pointer;
-  border: none;
-  background-color: transparent;
   width: 30px;
   height: 30px;
+  border: none;
+  background-color: transparent;
 }
-@media (max-width: 767px) {
-  .favourite__button {
-    width: 50px;
-    height: 50px;
-  }
-}
-.favourite__img {
+.button__img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;

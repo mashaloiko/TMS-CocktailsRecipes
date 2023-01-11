@@ -18,19 +18,21 @@ export const Favourite = () => {
     <div className="favourite">
       <div className="favourite__container">
         <h2 className="favourite__title">Favourite</h2>
-        {drinks.map((drink:DrinkType) => (
-        <div className="favourite__block" key={drink.idDrink}>
-          <DrinkCard 
-            id={drink.idDrink}
-            title={drink.strDrink}
-            img={drink.strDrinkThumb}
-            letter={params.letter}
-          />
-          <button className="favorite__button" onClick={() => removeDrink(drink.idDrink)}>
-            <img className="favourite__img" src={remove} alt="remove" />
-          </button>
+        <div className="favourite__wrap">
+          {drinks.map((drink:DrinkType) => (
+          <div className="favourite__block" key={drink.idDrink}>
+            <DrinkCard 
+              id={drink.idDrink}
+              title={drink.strDrink}
+              img={drink.strDrinkThumb}
+              letter={params.letter}
+            />
+            <button className="button" onClick={() => removeDrink(drink.idDrink)}>
+              <img className="button__img" src={remove} alt="remove" />
+            </button>
+          </div>
+          ))}
         </div>
-        ))}
       </div>
     </div>
   )
